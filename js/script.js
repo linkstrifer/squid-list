@@ -82,6 +82,8 @@ var splatoonApp = (function($) {
 		var url = endpoint + 'user/register';
 		var formData = $form.serializeObject();
 
+		deactivateForm($form);
+
 		$.ajax({
 			'url': url,
 			'method': 'POST',
@@ -93,6 +95,8 @@ var splatoonApp = (function($) {
 			$validateForm.find('[name=email]').val(formData.email);
 
 			hideForm($form);
+		}).complete(function() {
+			activateForm($form);
 		});
 	}
 
@@ -100,6 +104,8 @@ var splatoonApp = (function($) {
 		var $form = $(form);
 		var url = endpoint + 'user/register';
 		var formData = $form.serializeObject();
+
+		deactivateForm($form);
 
 		$.ajax({
 			'url': url,
@@ -326,15 +332,4 @@ var splatoonApp = (function($) {
 	};
 
 	init();
-
-	return {
-		'init': init,
-		'register': register,
-		'getSession': getSession,
-		'validate': validate,
-		'user': get_user,
-		'getSplatoonUsers': getSplatoonUsers,
-		'registerSplatoonUser': registerSplatoonUser,
-	};
-
 })(jQuery);
