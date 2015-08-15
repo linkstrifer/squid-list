@@ -1,0 +1,133 @@
+@import 'normalize';
+@import 'splatoon_font';
+
+body {
+	margin: 0;
+}
+
+.splatoon {
+	font-size: 16px;
+	max-width: 920px;
+	padding: 10px;
+
+	a {
+		color: white;
+		font-weight: bold;
+	}
+}
+
+.splatoon-title {
+}
+
+.splatoon-box {
+	background-color: #aa66cc;
+	border-radius: 20px;
+	box-sizing: border-box;
+	color: #fafafa;
+	padding: 5px 10px;
+}
+
+.splatoon-button {
+	background-color: #2ecc71;
+	border: 5px solid rgba(0,0,0,.3);
+	cursor: pointer;
+	display: inline-block;
+	font-weight: bold;
+	margin: 10px 0 0;
+	padding: 5px;
+	vertical-align: top;
+
+	&:hover {
+		border-color: rgba(0,0,0,.1);
+	}
+}
+
+.splatoon-buttons {
+	display: block;
+	font-size: 15px;
+	margin: 10px 0;
+}
+
+.splatoon-form {
+	font-size: 16px;
+	margin: 20px 0;
+
+	&.is-hide {
+		display: none;
+	}
+}
+
+.splatoon-input {
+	background-color: white;
+	border-radius: 5px;
+	border: none;
+	color: rgba(0,0,0,.8);
+	display: block;
+	height: 35px;
+	margin: 10px 0 0;
+	min-width: 100px;
+	padding: 0 10px;
+	vertical-align: top;
+
+	&:disabled {
+		background-color: #ddd;
+		color: #000;
+	}
+}
+
+.splatoon-message {
+	@extend .splatoon-box;
+	padding: 20px;
+}
+
+.splatoon-list {
+	box-sizing: border-box;
+	font-size: 22px;
+	width: 100%;
+}
+
+//user
+
+.splatoon-user {
+	@extend .splatoon-box;
+
+	border: 3px solid rgba(0,0,0,.5);
+	font-family: 'Splatoon Paintball', sans-serif;
+	margin: 10px 0;
+	padding: 10px;
+	position: relative;
+
+	&:hover {
+		border-color: #8950a5;
+	}
+}
+
+.splatoon-user-nnid {
+}
+
+.splatoon-user-rank {
+	background-color: rgba(0,0,0,.3);
+	border-radius: 10px 25px;
+	padding: 5px 10px;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	text-transform: uppecarse;
+}
+
+//buttons
+
+.splatoon-logout {
+	background-color: #e74c3c;
+	display: none;
+
+	&.is-show {
+		display: inline-block;
+	}
+}
+
+.splatoon-register {
+	&.is-hide {
+		display: none;
+	}
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="styles/css/splatoon.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<!-- list -->
+	<div class="splatoon">
+		<div class="splatoon-message">
+			<h1 class="splatoon-title">Directorio de Squids</h1>
+			<p>Aquí puedes encontrar mas Squids para jugar con sus respectivos rangos.</p>
+			<p>Si encuentras algún error o tienes ideas de que más podemos agregar en el directorio, puedes escribirnos a <a href="mailto:link@anothernoob.com">link@anothernoob.com</a></p>
+			<small>v0.0.2</small>
+			<div class="splatoon-buttons">
+				<form class="splatoon-form" id="loginForm">
+					<input placeholder="Correo electrónico" class="splatoon-input" type="email" name="email" required />
+					<input placeholder="Contraseña" class="splatoon-input" type="password" name="password" required />
+					<button type="submit" class="splatoon-button">Inicia sesión</button>
+					<span class="splatoon-button splatoon-register" data-form="registerForm">Registrate</span>
+				</form>
+				<form class="splatoon-form is-hide" id="registerNNIDForm">
+					<p>Aquí puedes agregar o actualizar tus datos de Squid.</p>
+					<input placeholder="NNID" class="splatoon-input" type="text" name="nnid" required />
+					<select name="rank" class="splatoon-input" required>
+						<option value="">Rank</option>
+						<option value="c-">C-</option>
+						<option value="c">C</option>
+						<option value="c+">C+</option>
+						<option value="b-">B-</option>
+						<option value="b">B</option>
+						<option value="b+">B+</option>
+						<option value="a-">A-</option>
+						<option value="a">A</option>
+						<option value="a+">A+</option>
+						<option value="s">S</option>
+						<option value="s+">S+</option>
+					</select>
+					<button type="submit" class="splatoon-button">Registrate</button>
+				</form>
+				<form class="splatoon-form is-hide" id="registerForm">
+					<input type="email" name="email" placeholder="Correo electrónico" class="splatoon-input" required>
+					<input type="text" name="first_name" placeholder="Nombres" class="splatoon-input" required>
+					<input type="text" name="last_name" placeholder="Apellidos" class="splatoon-input" required>
+					<input type="text" name="display_name" placeholder="Nombre de usuario" class="splatoon-input" required>
+					<button type="submit" class="splatoon-button">Registrate</button>
+				</form>
+				<form class="splatoon-form is-hide" id="validateForm">
+					<p>Te hemos envíado un código a tu correo electrónico para validar tu cuenta.</p>
+					<input type="email" name="email" placeholder="Correo electrónico" class="splatoon-input" required>
+					<input type="password" name="new_password" placeholder="Contraseña" class="splatoon-input" required>
+					<input type="text" name="code" placeholder="Código de validación" class="splatoon-input" required>
+					<button type="submit" class="splatoon-button">Validar</button>
+				</form>
+				<span class="splatoon-button splatoon-logout">Salir</span>
+			</div>
+		</div>
+		<div class="splatoon-list"></div>
+	</div>
+
+	<!-- scripts -->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="js/vendors/handlebars.3.0.3.js"></script>
+	<script src="js/script.js"></script>
+	<script type="text/javascript">
+		WebFontConfig = {
+		google: { families: [ 'Josefin+Sans:400,700,300:latin' ] }
+		};
+		(function() {
+		var wf = document.createElement('script');
+		wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+		  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+		wf.type = 'text/javascript';
+		wf.async = 'true';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(wf, s);
+		})(); 
+	</script>
+
+	<!-- templates -->
+	<script id="splatoon-user" type="text/x-handlebars-template">
+		<div class="splatoon-user" id="nnid-{{user}}">
+			<span class="splatoon-user-rank">{{rank}}</span>
+			<span class="splatoon-user-nnid">{{nnid}}</span>
+		</div>
+	</script>
+</body>
+</html>
