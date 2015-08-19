@@ -11,3 +11,4 @@ v0.0.23
 - [ ] add fav weapon
 - [ ] add user info
 - [ ] add skype username
+- [ ] add edit account info (change nickname, email, password, etc)
