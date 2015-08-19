@@ -9,3 +9,5 @@ v0.0.23
 - [ ] add nickname
 - [ ] add clan tag
 - [ ] add fav weapon
+- [ ] add user info
+- [ ] add skype username
